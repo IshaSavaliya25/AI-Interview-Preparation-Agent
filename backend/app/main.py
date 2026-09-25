@@ -3,12 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes.interview import router as interview_router
 from app.routes.evaluation import router as evaluation_router
+from app.routes.rag import router as rag_router
+from app.routes.memory import router as memory_router
 
 
 app = FastAPI(
     title="AI Interview Preparation Agent",
-    description="GenAI-powered personalized interview preparation system",
-    version="1.0.0"
+    description="GenAI-powered personalized interview preparation system with RAG and Memory",
+    version="1.2.0"
 )
 
 
@@ -23,6 +25,8 @@ app.add_middleware(
 
 app.include_router(interview_router)
 app.include_router(evaluation_router)
+app.include_router(rag_router)
+app.include_router(memory_router)
 
 
 @app.get("/")

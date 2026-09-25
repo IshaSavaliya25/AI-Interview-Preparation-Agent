@@ -1,4 +1,23 @@
+# Virtual environments
 venv/
+*/venv/
+
+# Environment variables
 .env
+*/.env
+
+# Python cache & compiled files
 __pycache__/
-*.pyc
+*/__pycache__/
+*.py[cod]
+*$py.class
+
+# Runtime FAISS vector stores & local data
+data/
+backend/data/
+*.faiss
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
